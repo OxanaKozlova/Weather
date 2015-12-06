@@ -17,15 +17,8 @@ public class Main extends Application {
         setWindowSize(primaryStage, 520,600);
 
 
-        CurrentWeatherAPI cur = new CurrentWeatherAPI("Minsk");
-      /*  System.out.println(cur.getCurrentTemperature());
-        System.out.println(cur.getCloud());
-        System.out.println(cur.getPressure());
-        System.out.println(cur.getHumidity());
-        System.out.println(cur.getWindSpeed());
-        cur.getLogo();
-        cur.getDescription();*/
-        DailyWeather d = new DailyWeather("Minsk",5);
+
+
 
 
 
