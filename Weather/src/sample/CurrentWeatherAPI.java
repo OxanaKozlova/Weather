@@ -17,13 +17,8 @@ public class CurrentWeatherAPI extends WeatherAPI {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    public void setCurrentWeather(String cityNmae){
-        try {
-            this.currentWeather = this.weather.currentWeatherByCityName(cityNmae);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+
 
     }
 
@@ -31,7 +26,7 @@ public class CurrentWeatherAPI extends WeatherAPI {
         if(this.currentWeather.hasCityCode() == true){
             Float maxTemperatureFahrenheit = this.currentWeather.getMainInstance().getMaxTemperature();
             Integer maxTemperature  = convertToCelsius(maxTemperatureFahrenheit);
-            return ( maxTemperature.toString() + " Â°C");
+            return ( maxTemperature.toString() + " °C");
         }
         else return null;
     }
@@ -71,6 +66,7 @@ public class CurrentWeatherAPI extends WeatherAPI {
         if(this.currentWeather.hasCityCode() == true){
             if(this.currentWeather.getWindInstance().hasWindGust()){
                 Integer windSpeed = (int)(currentWeather.getWindInstance().getWindSpeed()/2);
+                System.out.println(this.currentWeather.getRawResponse());
                 return (windSpeed.toString()+ " m/s");
             }
 
@@ -79,7 +75,7 @@ public class CurrentWeatherAPI extends WeatherAPI {
     }
 
     public String getLogo(){
-        return currentWeather.getWeatherInstance(0).getWeatherIconName();
+         return currentWeather.getWeatherInstance(0).getWeatherIconName();
     }
 
     public String getDescription(){
