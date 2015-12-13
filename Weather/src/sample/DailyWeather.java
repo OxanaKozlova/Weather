@@ -22,13 +22,6 @@ public class DailyWeather extends WeatherAPI {
         } catch (IOException e) {
             e.printStackTrace();
         }
-<<<<<<< HEAD
-=======
-       // System.out.println(dailyWeather.getRawResponse());
-        //System.out.println(dailyWeather.getForecastInstance(1).getTemperatureInstance().getDayTemperature());
-        //System.out.println(dailyWeather.getForecastInstance(1).getTemperatureInstance().getNightTemperature());
-        //System.out.println(dailyWeather.getForecastInstance(4).getWeatherInstance(0).getWeatherIconName());
->>>>>>> f7d41b88a3ccd93a5903ac896f2b135b8c480851
 
     }
     public String getTemperatureDay(int day){

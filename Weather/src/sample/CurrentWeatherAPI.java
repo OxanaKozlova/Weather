@@ -79,16 +79,13 @@ public class CurrentWeatherAPI extends WeatherAPI {
     }
 
     public String getLogo(){
-<<<<<<< HEAD
+
         return currentWeather.getWeatherInstance(0).getWeatherIconName();
     }
 
     public String getCityName(){
         return currentWeather.getCityName();
 
-=======
-         return currentWeather.getWeatherInstance(0).getWeatherIconName();
->>>>>>> f7d41b88a3ccd93a5903ac896f2b135b8c480851
     }
 
     public String getDescription(){
