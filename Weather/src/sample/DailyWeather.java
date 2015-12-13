@@ -22,6 +22,13 @@ public class DailyWeather extends WeatherAPI {
         } catch (IOException e) {
             e.printStackTrace();
         }
+<<<<<<< HEAD
+=======
+       // System.out.println(dailyWeather.getRawResponse());
+        //System.out.println(dailyWeather.getForecastInstance(1).getTemperatureInstance().getDayTemperature());
+        //System.out.println(dailyWeather.getForecastInstance(1).getTemperatureInstance().getNightTemperature());
+        //System.out.println(dailyWeather.getForecastInstance(4).getWeatherInstance(0).getWeatherIconName());
+>>>>>>> f7d41b88a3ccd93a5903ac896f2b135b8c480851
 
     }
     public String getTemperatureDay(int day){
@@ -38,5 +45,25 @@ public class DailyWeather extends WeatherAPI {
 
     public String getLogo(int day){
         return dailyWeather.getForecastInstance(day).getWeatherInstance(0).getWeatherIconName();
+    }
+
+
+    public String getNightTemperature(){
+        if(this.dailyWeather.hasCityInstance() == true){
+            Float maxTemperatureFahrenheit = this.dailyWeather.getForecastInstance(1).getTemperatureInstance().getNightTemperature();
+            Integer maxTemperature  = convertToCelsius(maxTemperatureFahrenheit);
+            return ( maxTemperature.toString() + " C");
+        }
+        else return null;
+
+    }
+
+    public String getDayTemperature(){
+        if(this.dailyWeather.hasCityInstance() == true){
+            Float maxTemperatureFahrenheit = dailyWeather.getForecastInstance(1).getTemperatureInstance().getDayTemperature();
+            Integer maxTemperature  = convertToCelsius(maxTemperatureFahrenheit);
+            return ( maxTemperature.toString() + " C");
+        }
+        else return null;
     }
 }
